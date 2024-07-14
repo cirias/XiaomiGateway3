@@ -206,3 +206,4 @@ XEntity.NEW["climate.model.lumi.airrtc.tcpecn02"] = XAqaraS2
 XEntity.NEW["climate.model.lumi.airrtc.agl001"] = XAqaraE1
 XEntity.NEW["climate.model.14050"] = XScdvbHAVC
 XEntity.NEW["climate.model.9507"] = XScdvbHAVC
+XEntity.NEW["climate.model.18764"] = XScdvbHAVC
