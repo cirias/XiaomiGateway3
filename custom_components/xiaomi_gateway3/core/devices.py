@@ -3335,6 +3335,21 @@ DEVICES += [{
         ConstConv("action", mi="5.e.1", value=BUTTON_2_SINGLE),
     ]
 }, {
+    15035: ["Unknown", "Two Key Mesh Switch", "topwit.switch.rzw25"],
+    "spec": [
+        BaseConv("switch_1", "switch", mi="2.p.1"),
+        BaseConv("switch_2", "switch", mi="3.p.1"),
+        MapConv("mode_1", "select", mi="2.p.2", map={0: "Default", 1: "Wireless"}),
+        MapConv("mode_2", "select", mi="3.p.2", map={0: "Default", 1: "Wireless"}),
+        BaseConv("action", "sensor"),
+        ConstConv("action", mi="4.e.1", value=BUTTON_1_SINGLE),
+        ConstConv("action", mi="4.e.2", value=BUTTON_1_DOUBLE),
+        ConstConv("action", mi="4.e.3", value=BUTTON_1_HOLD),
+        ConstConv("action", mi="5.e.1", value=BUTTON_2_SINGLE),
+        ConstConv("action", mi="5.e.2", value=BUTTON_2_DOUBLE),
+        ConstConv("action", mi="5.e.3", value=BUTTON_2_HOLD),
+    ]
+}, {
     15082: ["Unknown", "Smart Quadruple Switch", "topwit.switch.rzw34"],
     "spec": [
         BaseConv("switch_1", "switch", mi="2.p.1"),
