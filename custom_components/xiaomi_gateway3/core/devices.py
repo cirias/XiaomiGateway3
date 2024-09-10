@@ -3418,6 +3418,15 @@ DEVICES += [{
         BaseConv("target_temp", mi="2.p.3"),
     ],
 }, {
+    18764: ["Qdhkl", "Air Conditioner", "qdhkl.airc.b19m"],
+    "spec": [
+        BaseConv("climate", "climate", mi="2.p.1"),
+        MapConv("hvac_mode", mi="2.p.2", map={0: "cool", 1: "heat", 2: "fan_only", 3: "dry"}),
+        BaseConv("target_temp", mi="2.p.3"),
+        MapConv("fan_mode", mi="3.p.1", map={0: "auto", 1: "low", 2: "medium", 3: "high"}),
+        BaseConv("current_temp", mi="4.p.1"),
+    ],
+}, {
     11971: ["Unknown", "Mesh Light", "shhf.light.slcwb3"],
     "spec": [
         BaseConv("light", "light", mi="2.p.1"),
