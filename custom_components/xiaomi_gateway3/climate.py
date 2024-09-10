@@ -9,6 +9,7 @@ from homeassistant.components.climate import (
     HVACAction,
 )
 from homeassistant.const import PRECISION_WHOLE, UnitOfTemperature
+from homeassistant.helpers.restore_state import RestoreEntity
 
 from .hass.entity import XEntity
 
@@ -123,7 +124,7 @@ class XAqaraE1(XEntity, ClimateEntity):
         self.device.write(payload)
 
 
-class XScdvbHAVC(XEntity, ClimateEntity):
+class XScdvbHAVC(XEntity, ClimateEntity, RestoreEntity):
     _attr_fan_mode = None
     _attr_fan_modes = [FAN_LOW, FAN_MEDIUM, FAN_HIGH, FAN_AUTO]
     _attr_hvac_mode = None
@@ -166,6 +167,15 @@ class XScdvbHAVC(XEntity, ClimateEntity):
             return
 
         self._attr_hvac_mode = self._mode if self._enabled else HVACMode.OFF
+
+    def get_state(self) -> dict:
+        return {
+            "climate": self._enabled,
+            "hvac_mode": self._mode,
+            "fan_mode": self._attr_fan_mode,
+            "current_temp": self._attr_current_temperature,
+            "target_temp": self._attr_target_temperature,
+        }
 
     async def async_set_temperature(self, temperature: int, **kwargs) -> None:
         if temperature:
