@@ -2272,6 +2272,15 @@ DEVICES += [{
         ConstConv("action", mi="17.e.3", value=BUTTON_4_HOLD),
     ],
 }, {
+    # 萨瑟兰情景智能灯带 https://home.miot-spec.com/spec/abhome.light.wy0a01
+    25693: ["Abhome", "Mesh Light", "abhome.light.wy0a01"],
+    "spec": [
+        BaseConv("light", "light", mi="2.p.1"),
+        BrightnessConv("brightness", mi="2.p.2", max=100),
+        ColorTempKelvin("color_temp", mi="2.p.3", mink=2700, maxk=6500),
+        MapConv("power_on_state", "select", mi="2.p.9", map={0: "default", 1: "on", 2: "off"}),
+    ],
+}, {
     1945: ["Xiaomi", "Mesh Wall Switch", "DHKG01ZM", "zimi.switch.dhkg01"],
     "spec": [
         BaseConv("switch", "switch", mi="2.p.1"),
