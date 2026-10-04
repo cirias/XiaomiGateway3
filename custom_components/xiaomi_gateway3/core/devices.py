@@ -2730,6 +2730,8 @@ DEVICES += [{
 }, {
     # 萨瑟兰情景智能灯带 https://home.miot-spec.com/spec/abhome.light.wy0a01
     25693: ["Abhome", "Mesh Light", "abhome.light.wy0a01"],
+    # DW情景智能灯带2.0 https://home.miot-spec.com/spec/zhuow.light.wy0a02
+    27207: ["Zhuow", "Mesh Light", "zhuow.light.wy0a02"],
     "spec": [
         BaseConv("light", "light", mi="2.p.1"),
         BrightnessConv("brightness", mi="2.p.2", max=100),
