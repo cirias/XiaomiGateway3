@@ -2737,6 +2737,7 @@ DEVICES += [{
         BrightnessConv("brightness", mi="2.p.2", max=100),
         ColorTempKelvin("color_temp", mi="2.p.3", mink=2700, maxk=6500),
         MapConv("power_on_state", "select", mi="2.p.9", map={0: "default", 1: "on", 2: "off"}),
+        BoolConv("flex_switch", "switch", mi="2.p.12", entity=ENTITY_CONFIG),
     ],
 }, {
     1945: ["Xiaomi", "Mesh Wall Switch", "DHKG01ZM", "zimi.switch.dhkg01"],
